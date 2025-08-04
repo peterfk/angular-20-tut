@@ -4,6 +4,7 @@ import { HousingLocationInfo } from "./housinglocation";
 @Injectable({
   providedIn: "root",
 })
+//This is the Housing Service
 export class Housing {
   getAllHousingLocations(): HousingLocationInfo[] {
     return this.housingLocationList;
@@ -11,6 +12,12 @@ export class Housing {
   getHousingLocationById(id: number): HousingLocationInfo | undefined {
     return this.housingLocationList.find(
       (housingLocation) => housingLocation.id === id
+    );
+  }
+
+  submitApplication(firstName: string, lastName: string, email: string) {
+    console.log(
+      `Homes application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}.`
     );
   }
 
